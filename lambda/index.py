@@ -11,7 +11,7 @@ def lambda_handler(event, context):
      try:
          print("Received event:", json.dumps(event))
 
-         # Cognitoで認証されたユーザー情報を取得（必要に応じてFastAPIに転送できます）
+         # Cognitoで認証されたユーザー情報を取得
          user_info = None
          if 'requestContext' in event and 'authorizer' in event['requestContext']:
              user_info = event['requestContext']['authorizer']['claims']
